@@ -54,6 +54,18 @@ class RestaurantTableViewController: UITableViewController {
         
         optionMenu.addAction(callAction)
         
+        // Check-in Action
+        let checkInAction = UIAlertAction(title: "Check in", style: .default, handler:
+            {
+                (action:UIAlertAction!) -> Void in
+                
+                let cell = tableView.cellForRow(at: indexPath)
+                cell?.accessoryType = .checkmark
+        })
+        optionMenu.addAction(checkInAction)
+        
+        tableView.deselectRow(at: indexPath, animated: false)
+        
     }
     
     override func viewDidLoad() {

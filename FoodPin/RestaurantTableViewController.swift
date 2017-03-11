@@ -18,6 +18,9 @@ class RestaurantTableViewController: UITableViewController {
     
     var restaurantTypes = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Casual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "American / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
     
+    // keep track of visited track with checkmarks
+    var restaurantIsVisited = Array(repeating: false, count: 21)
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier = "Cell"
@@ -28,6 +31,13 @@ class RestaurantTableViewController: UITableViewController {
         cell.locationLabel.text = restaurantLocations[indexPath.row]
         cell.typeLabel.text = restaurantTypes[indexPath.row]
         cell.thumbnailImageView.image = UIImage(named: restaurantImages[indexPath.row])
+        
+        // update the accessory view
+        if restaurantIsVisited[indexPath.row] {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
         
         return cell
     }
@@ -63,6 +73,7 @@ class RestaurantTableViewController: UITableViewController {
                 
                 let cell = tableView.cellForRow(at: indexPath)
                 cell?.accessoryType = .checkmark
+                self.restaurantIsVisited[indexPath.row] = true
         })
         optionMenu.addAction(checkInAction)
         

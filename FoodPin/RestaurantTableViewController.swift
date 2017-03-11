@@ -75,7 +75,23 @@ class RestaurantTableViewController: UITableViewController {
                 cell?.accessoryType = .checkmark
                 self.restaurantIsVisited[indexPath.row] = true
         })
-        optionMenu.addAction(checkInAction)
+        
+        
+        // Check-Out Action
+        let undoCheckInAction = UIAlertAction(title: "Undo Check in", style: .default, handler:
+            {
+                (action:UIAlertAction!) -> Void in
+                
+                let cell = tableView.cellForRow(at: indexPath)
+                cell?.accessoryType = .none
+                self.restaurantIsVisited[indexPath.row] = false
+        })
+        
+        if restaurantIsVisited[indexPath.row] {
+            optionMenu.addAction(undoCheckInAction)
+        } else {
+            optionMenu.addAction(checkInAction)
+        }
         
         tableView.deselectRow(at: indexPath, animated: false)
         

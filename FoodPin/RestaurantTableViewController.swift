@@ -44,6 +44,16 @@ class RestaurantTableViewController: UITableViewController {
         // Display the menu
         present(optionMenu, animated: true, completion: nil)
         
+        // Add Call Action
+        let callActionHandler = { (action:UIAlertAction!) -> Void in
+            let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, the call feature is not available yet. Please retry later.", preferredStyle: .alert)
+            alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler:nil))
+        }
+        
+        let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)", style: .default, handler: callActionHandler)
+        
+        optionMenu.addAction(callAction)
+        
     }
     
     override func viewDidLoad() {

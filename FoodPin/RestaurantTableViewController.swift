@@ -109,6 +109,15 @@ class RestaurantTableViewController: UITableViewController {
             restaurantIsVisited.remove(at: indexPath.row)
             restaurantImages.remove(at: indexPath.row)
         }
+        
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        
+        // Debubbing to see if content is being deleted
+        print("Total item: \(restaurantNames.count)")
+        for name in restaurantNames {
+            print(name)
+        }
+        
     }
     
     override func viewDidLoad() {

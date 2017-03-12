@@ -97,6 +97,20 @@ class RestaurantTableViewController: UITableViewController {
         
     }
     
+    // Swipe to delete cell
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            
+            // Delete the row from the data source
+            restaurantNames.remove(at: indexPath.row)
+            restaurantLocations.remove(at: indexPath.row)
+            restaurantTypes.remove(at: indexPath.row)
+            restaurantIsVisited.remove(at: indexPath.row)
+            restaurantImages.remove(at: indexPath.row)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -113,7 +127,7 @@ class RestaurantTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1

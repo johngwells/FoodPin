@@ -10,6 +10,9 @@ import UIKit
 
 class ReviewViewController: UIViewController {
     
+    @IBOutlet var restaurantReviewImage:UIImageView!
+    var restaurant:Restaurant? // Class to Restaurant.swift
+    
     @IBOutlet var backgroundImageView: UIImageView!
     
     //Manipulate the container view with a growing animation *cntl+click ReviewView Controller connect outlet to View
@@ -23,7 +26,10 @@ class ReviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let restaurant = restaurant {
+        restaurantReviewImage.image = UIImage(named: restaurant.image)
+        }
+        // Do any additional setup after loading the view.  
         
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -60,7 +66,6 @@ class ReviewViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

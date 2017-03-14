@@ -11,7 +11,7 @@ import UIKit
 class RestaurantTableViewController: UITableViewController {
     
     var restaurants:[Restaurant] = [
-        Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop", location: "Hong Kong", image: "cafededend.jpg", isVisited: false),
+        Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop", location: "Hong Kong", image: "cafedeadend.jpg", isVisited: false),
         Restaurant(name: "Homei", type: "Cafe", location: "Hong Kong", image: "homei.jpg", isVisited: false),
         Restaurant(name: "Teaka", type: "Tea House", location: "Hong Kong", image: "teakha.jpg", isVisited: false),
         Restaurant(name: "Cafe Loisl", type: "Austrian / Causual Drink", location: "Hong Kong", image: "cafeloisl.jpg", isVisited: false),

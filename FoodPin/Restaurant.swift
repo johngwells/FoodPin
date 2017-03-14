@@ -14,13 +14,15 @@ class Restaurant {
     var location = ""
     var image = ""
     var isVisited = false
+    var phone = "123-000 +\restaurants[indexPath.row]"
     
     // when two are named the same you use self. Self is connected to the var while the other is to the aurgument in init()
-    init(name: String, type: String, location: String, image: String, isVisited: Bool) {
+    init(name: String, type: String, location: String, phone: String, image: String, isVisited: Bool) {
         self.name = name
         self.type = type
         self.location = location
         self.image = image
         self.isVisited = isVisited
+        self.phone = phone
     }
 }

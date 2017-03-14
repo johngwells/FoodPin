@@ -11,9 +11,25 @@ import UIKit
 // Added UITableViewDataSource & UITableViewDelegate to the Class *right click RDViewController source/delegate to tableView
 class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    //Unwind Segue to go back from reviw page *ctrl+click from X to exit*
+    // Unwind Segue to go back from review page
     @IBAction func close(segue:UIStoryboardSegue) {
         
+    }
+    // *ctrl+click from X to exit* Changed Idenity 3 segues to great, ok & dislike.
+    @IBAction func ratingButtonTapped(segue: UIStoryboardSegue) {
+        if let rating = segue.identifier {
+            
+            restaurant.isVisited = true // since user has dined there we updated it to true
+            
+            switch rating {
+                case "great": restaurant.rating = "Absolutely love it! Must try."
+                case "ok": restaurant.rating = "It's ok."
+                case "dislike": restaurant.rating = "I don't like it."
+            default: break
+            }
+        }
+        
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,7 +56,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             cell.valueLabel.text = restaurant.phone
         case 4:
             cell.fieldLabel.text = "Been Here"
-            cell.valueLabel.text = (restaurant.isVisited) ? "Yes, I've been here before" : "No"
+            cell.valueLabel.text = (restaurant.isVisited) ? "Yes, I've been here before. \(restaurant.rating)": "No"
         default:
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""

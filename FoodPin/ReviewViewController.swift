@@ -14,6 +14,11 @@ class ReviewViewController: UIViewController {
     
     //Manipulate the container view with a growing animation *cntl+click ReviewView Controller connect outlet to View
     @IBOutlet var containerView: UIView!
+    
+    // Unwind Seque and Data Passing for buttons * Drag buttons to Exit
+    @IBAction func ratingButtonTapped(segue: UIStoryboardSegue) {
+    
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

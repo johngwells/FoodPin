@@ -16,6 +16,9 @@ class Restaurant {
     var isVisited = false
     var phone = "123-000 +\restaurants[indexPath.row]"
     
+    // Will use this property to store restaurant ratings
+    var rating = ""
+    
     // when two are named the same you use self. Self is connected to the var while the other is to the aurgument in init()
     init(name: String, type: String, location: String, phone: String, image: String, isVisited: Bool) {
         self.name = name

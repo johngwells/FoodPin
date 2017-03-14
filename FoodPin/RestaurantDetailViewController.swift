@@ -69,7 +69,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         // Do any additional setup after loading the view.
         restaurantImageView.image = UIImage(named: restaurant.image)
         
-        // navigation Restaurant Title Name
+        // navigationBar Restaurant Title Name
         title = restaurant.name
         
  /*       restaurantNameLabel.text = restaurant.name
@@ -77,6 +77,14 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         restaurantLocationLabel.text = restaurant.location */
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // swipe hide navbar disable on detail view
+        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

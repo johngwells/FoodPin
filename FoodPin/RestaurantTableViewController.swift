@@ -53,6 +53,7 @@ class RestaurantTableViewController: UITableViewController {
         
         return cell
     }
+    
     /* TURN off Features will use in Detail View controller Instead
      
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -173,12 +174,20 @@ class RestaurantTableViewController: UITableViewController {
         
         // Remove the title of the back button
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    //viewdidload on loads once and causes problems. viewWillappear is called everytime so nav works when swiping through app
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Hide the navbar on swipe
+        navigationController?.hidesBarsOnSwipe = true
     }
     
     override func didReceiveMemoryWarning() {

@@ -15,6 +15,7 @@ class Restaurant {
     var image = ""
     var isVisited = false
     
+    // when two are named the same you use self. Self is connected to the var while the other is to the aurgument in init()
     init(name: String, type: String, location: String, image: String, isVisited: Bool) {
         self.name = name
         self.type = type

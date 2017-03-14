@@ -10,6 +10,7 @@ import UIKit
 
 class RestaurantTableViewController: UITableViewController {
     
+    // Created Restaurants.swift. Created a class and init() with type, location, image & isVisited. Makes the code shorter, more readable
     var restaurants:[Restaurant] = [
         Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop", location: "Hong Kong", image: "cafedeadend.jpg", isVisited: false),
         Restaurant(name: "Homei", type: "Cafe", location: "Hong Kong", image: "homei.jpg", isVisited: false),

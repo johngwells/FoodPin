@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Added UITableViewDataSource & UITableViewDelegate to the Class
 class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -17,7 +18,8 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RestaurantDetailTableViewCell
         
-        //Configure the cell
+        //Configure the cell, Clicked Cell: changed class to RestaurantDetailViewController. Connect Field & Value label
+        // Switch is used instead of if/else so when the first
         switch indexPath.row {
         case 0:
             cell.fieldLabel.text = "Name"
@@ -35,10 +37,17 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""
         }
+        // Make cells transparent
+        cell.backgroundColor = UIColor.clear
         
         return cell
     }
     
+    // Establish a connection with the table view object in storyboard
+    // Right clicked table View, + Source & Delegate to RestaurantDetail View controller
+    @IBOutlet var tableView:UITableView!
+    
+    // Make connections to labels
     @IBOutlet var restaurantImageView:UIImageView!
     @IBOutlet var restaurantNameLabel: UILabel!
     @IBOutlet var restaurantTypeLabel: UILabel!
@@ -48,6 +57,8 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
         
         // Do any additional setup after loading the view.
         restaurantImageView.image = UIImage(named: restaurant.image)

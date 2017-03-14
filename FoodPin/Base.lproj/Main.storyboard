@@ -171,6 +171,7 @@
                     </view>
                     <connections>
                         <outlet property="restaurantImageView" destination="jII-dm-tkH" id="T7v-JZ-NEP"/>
+                        <outlet property="tableView" destination="fTf-6R-l5k" id="TVZ-QQ-TdU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BLR-5C-jqh" userLabel="First Responder" sceneMemberID="firstResponder"/>

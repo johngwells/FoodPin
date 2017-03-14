@@ -8,8 +8,13 @@
 
 import UIKit
 
-// Added UITableViewDataSource & UITableViewDelegate to the Class
+// Added UITableViewDataSource & UITableViewDelegate to the Class *right click RDViewController source/delegate to tableView
 class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    //Unwind Segue to go back from reviw page *ctrl+click from X to exit*
+    @IBAction func close(segue:UIStoryboardSegue) {
+        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
@@ -19,7 +24,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RestaurantDetailTableViewCell
         
         //Configure the cell, Clicked Cell: changed class to RestaurantDetailViewController. Connect Field & Value label
-        // Switch is used instead of if/else so when the first
+        // Switch is used instead of if/else so when the first data matches it stops
         switch indexPath.row {
         case 0:
             cell.fieldLabel.text = "Name"

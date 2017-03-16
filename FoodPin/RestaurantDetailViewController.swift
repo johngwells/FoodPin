@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import MapKit
 
 // Added UITableViewDataSource & UITableViewDelegate to the Class *right click RDViewController source/delegate to tableView
 class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet var mapView: MKMapView!
     
     // Unwind Segue to go back from review page
     @IBAction func close(segue:UIStoryboardSegue) {
@@ -35,6 +38,11 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
+        
+    }
+    
+    func showMap() {
+        performSegue(withIdentifier: "showMap", sender: self)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -85,8 +93,8 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         // very light grey to the table cells
         tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
         
-        // remove separators of the empty rows
-        tableView.tableFooterView = UIView(frame: CGRect.zero)
+        // remove separators of the empty rows - footer. Turn off to use maps
+        //tableView.tableFooterView = UIView(frame: CGRect.zero)
         
         // color of the separators for content rows
         tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
@@ -102,6 +110,10 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         tableView.rowHeight = UITableViewAutomaticDimension
         
         //closeView.transform = CGAffineTransform.init(scaleX: 0, y: 0)
+        
+        // To reconginze tap gesture, we need to initialize UITapGestureReconginizer object and attach it to the map view
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showMap))
+        mapView.addGestureRecognizer(tapGestureRecognizer)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

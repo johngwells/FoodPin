@@ -28,8 +28,6 @@ class ReviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
 
         if let restaurant = restaurant {
         restaurantReviewImage.image = UIImage(named: restaurant.image)

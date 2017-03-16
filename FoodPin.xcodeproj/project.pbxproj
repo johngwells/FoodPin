@@ -17,6 +17,7 @@
 		CBCC8EA31E775EBD0025C561 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCC8EA21E775EBD0025C561 /* Restaurant.swift */; };
 		CBCC8EA51E779B880025C561 /* RestaurantDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCC8EA41E779B880025C561 /* RestaurantDetailTableViewCell.swift */; };
 		CBCC8EA71E77F5CA0025C561 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCC8EA61E77F5CA0025C561 /* ReviewViewController.swift */; };
+		CBCC8EAA1E7A419E0025C561 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCC8EA91E7A419E0025C561 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		CBCC8EA21E775EBD0025C561 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		CBCC8EA41E779B880025C561 /* RestaurantDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTableViewCell.swift; sourceTree = "<group>"; };
 		CBCC8EA61E77F5CA0025C561 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		CBCC8EA91E7A419E0025C561 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBCC8EAA1E7A419E0025C561 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +53,7 @@
 			children = (
 				CBA0DEFC1E71CCA900FC0FDE /* FoodPin */,
 				CBA0DEFB1E71CCA900FC0FDE /* Products */,
+				CBCC8EA81E7A419E0025C561 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +81,14 @@
 				CBCC8EA61E77F5CA0025C561 /* ReviewViewController.swift */,
 			);
 			path = FoodPin;
+			sourceTree = "<group>";
+		};
+		CBCC8EA81E7A419E0025C561 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CBCC8EA91E7A419E0025C561 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +124,11 @@
 					CBA0DEF91E71CCA900FC0FDE = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};

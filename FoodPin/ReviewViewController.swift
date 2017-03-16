@@ -10,7 +10,7 @@ import UIKit
 
 class ReviewViewController: UIViewController {
     
-    @IBOutlet var restaurantReviewImage:UIImageView!
+    @IBOutlet var restaurantReviewImage: UIImageView!
     var restaurant:Restaurant? // Class to Restaurant.swift
     
     @IBOutlet var backgroundImageView: UIImageView!
@@ -18,13 +18,18 @@ class ReviewViewController: UIViewController {
     //Manipulate the container view with a growing animation *cntl+click ReviewView Controller connect outlet to View
     @IBOutlet var containerView: UIView!
     
+    //Close Review page with animation on container
+    @IBOutlet var closeButton: UIButton!
+    
     // Unwind Seque and Data Passing for buttons * Drag buttons to Exit
     @IBAction func ratingButtonTapped(segue: UIStoryboardSegue) {
-    
+        
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         if let restaurant = restaurant {
         restaurantReviewImage.image = UIImage(named: restaurant.image)
@@ -46,7 +51,7 @@ class ReviewViewController: UIViewController {
         containerView.transform = combineTransform
         
         // Set the initial state of the container view for image starting from 0 to original size * Goes with the override viewDidAppear
-        //containerView.transform = CGAffineTransform.init(scaleX: 0, y:0)
+        closeButton.transform = CGAffineTransform.init(translationX: 1000, y: 0)
     }
     
     // Create the growing effect of containerView.transform *CGA.identiy is a constant that resets to original size/position
@@ -60,8 +65,15 @@ class ReviewViewController: UIViewController {
         UIView.animate(withDuration: 0.3, animations: {
             self.containerView.transform = CGAffineTransform.identity
         })
+        UIView.animate(withDuration: 0.5, delay: 0.5, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.3, options: .curveEaseInOut, animations: {
+            
+            self.closeButton.transform = CGAffineTransform.identity
+            
+        }, completion: nil)
+        
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

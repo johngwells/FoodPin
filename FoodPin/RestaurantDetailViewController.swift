@@ -15,7 +15,8 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     @IBAction func close(segue:UIStoryboardSegue) {
         
     }
-    // *ctrl+click from X to exit* Changed Idenity 3 segues to great, ok & dislike.
+    
+    // *ctrl+click from X to exit* Changed tIdenity 3 segues to great, ok & dislike.
     @IBAction func ratingButtonTapped(segue: UIStoryboardSegue) {
         if let rating = segue.identifier {
             
@@ -99,6 +100,8 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         // Enable self sizing cells for the detail view
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        //closeView.transform = CGAffineTransform.init(scaleX: 0, y: 0)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -109,13 +112,13 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         }
     }
 
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // swipe hide navbar disable on detail view
         navigationController?.hidesBarsOnSwipe = false
         navigationController?.setNavigationBarHidden(false, animated: true)
+        
     }
 
     override func didReceiveMemoryWarning() {

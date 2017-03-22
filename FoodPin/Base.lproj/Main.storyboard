@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WvZ-Fn-8d9" id="tsH-YP-36r">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rkp-p6-VhI">
@@ -315,10 +315,10 @@
             </objects>
             <point key="canvasLocation" x="2440.8000000000002" y="-289.20539730134936"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="hVP-Vi-op9">
             <objects>
-                <viewController id="xvo-He-8vm" sceneMemberID="viewController">
+                <viewController id="xvo-He-8vm" customClass="MapViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pmH-Zq-FMN"/>
                         <viewControllerLayoutGuide type="bottom" id="fgf-44-asr"/>
@@ -334,6 +334,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="2V5-cu-qHS" id="vLC-LP-HOQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MJI-Tj-edY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

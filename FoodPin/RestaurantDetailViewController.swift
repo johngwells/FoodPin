@@ -19,7 +19,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         
     }
     
-    // *ctrl+click from X to exit* Changed tIdenity 3 segues to great, ok & dislike.
+    // *ctrl+click from X to exit* Changed Identity 3 segues to great, ok & dislike.
     @IBAction func ratingButtonTapped(segue: UIStoryboardSegue) {
         if let rating = segue.identifier {
             
@@ -93,7 +93,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         // very light grey to the table cells
         tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
         
-        // remove separators of the empty rows - footer. Turn off to use maps
+        // clear table view footer. Turn off to use maps
         //tableView.tableFooterView = UIView(frame: CGRect.zero)
         
         // color of the separators for content rows
@@ -114,6 +114,34 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         // To reconginze tap gesture, we need to initialize UITapGestureReconginizer object and attach it to the map view
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showMap))
         mapView.addGestureRecognizer(tapGestureRecognizer)
+        
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(restaurant.location, completionHandler: {
+            placemarks, error in
+            if error != nil {
+                print(error!)
+                return
+            }
+            
+            if let placemarks = placemarks {
+                // Get the first placemark
+                let placemark = placemarks[0]
+                
+                // Add annotation
+                let annotation = MKPointAnnotation()
+                
+                if let location = placemark.location {
+                    //Display the annotation
+                    annotation.coordinate = location.coordinate
+                    self.mapView.addAnnotation(annotation)
+                    
+                    // Set the zoom level
+                    let region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, 250, 250)
+                    self.mapView.setRegion(region, animated: false)
+                    
+                }
+            }
+        })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -121,6 +149,9 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             let destinationController = segue.destination as! ReviewViewController
                 destinationController.restaurant = restaurant
 
+        } else if segue.identifier == "showMap" {
+            let destinationController = segue.destination as! MapViewController
+            destinationController.restaurant = restaurant
         }
     }
 

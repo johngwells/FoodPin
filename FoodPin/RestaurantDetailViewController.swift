@@ -116,10 +116,9 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         mapView.addGestureRecognizer(tapGestureRecognizer)
         
         let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(restaurant.location, completionHandler: {
-            placemarks, error in
-            if error != nil {
-                print(error!)
+        geoCoder.geocodeAddressString(restaurant.location, completionHandler: { placemarks, error in
+            if let error = error {
+                print(error)
                 return
             }
             

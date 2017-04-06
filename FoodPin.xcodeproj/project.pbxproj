@@ -15,6 +15,7 @@
 		CBA0DF031E71CCA900FC0FDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA0DF011E71CCA900FC0FDE /* Main.storyboard */; };
 		CBA0DF051E71CCA900FC0FDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBA0DF041E71CCA900FC0FDE /* Assets.xcassets */; };
 		CBA0DF081E71CCA900FC0FDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA0DF061E71CCA900FC0FDE /* LaunchScreen.storyboard */; };
+		CBA491671E95A443002B9BA0 /* AddRestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA491661E95A443002B9BA0 /* AddRestaurantController.swift */; };
 		CBCC8EA31E775EBD0025C561 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCC8EA21E775EBD0025C561 /* Restaurant.swift */; };
 		CBCC8EA51E779B880025C561 /* RestaurantDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCC8EA41E779B880025C561 /* RestaurantDetailTableViewCell.swift */; };
 		CBCC8EA71E77F5CA0025C561 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCC8EA61E77F5CA0025C561 /* ReviewViewController.swift */; };
@@ -32,6 +33,7 @@
 		CBA0DF041E71CCA900FC0FDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBA0DF071E71CCA900FC0FDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBA0DF091E71CCA900FC0FDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBA491661E95A443002B9BA0 /* AddRestaurantController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRestaurantController.swift; sourceTree = "<group>"; };
 		CBCC8EA21E775EBD0025C561 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		CBCC8EA41E779B880025C561 /* RestaurantDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTableViewCell.swift; sourceTree = "<group>"; };
 		CBCC8EA61E77F5CA0025C561 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				CBCC8EA41E779B880025C561 /* RestaurantDetailTableViewCell.swift */,
 				CBCC8EA61E77F5CA0025C561 /* ReviewViewController.swift */,
 				CB3BF2AC1E8268BF00136419 /* MapViewController.swift */,
+				CBA491661E95A443002B9BA0 /* AddRestaurantController.swift */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBA491671E95A443002B9BA0 /* AddRestaurantController.swift in Sources */,
 				CBCC8EA31E775EBD0025C561 /* Restaurant.swift in Sources */,
 				CBA0DEFE1E71CCA900FC0FDE /* AppDelegate.swift in Sources */,
 				CBCC8EA71E77F5CA0025C561 /* ReviewViewController.swift in Sources */,

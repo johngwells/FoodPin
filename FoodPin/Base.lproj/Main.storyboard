@@ -496,6 +496,10 @@
                                                     <state key="normal" title="Yes">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="toggleBeenHereButtonWithSender:" destination="dc9-XB-PRA" eventType="touchUpInside" id="KuO-3A-58L"/>
+                                                        <action selector="toggleBeenHereButtonWithSender:" destination="dc9-XB-PRA" eventType="editingDidEnd" id="rdb-FN-Iur"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSG-Cd-L6V">
                                                     <rect key="frame" x="83" y="33" width="50" height="30"/>
@@ -504,6 +508,9 @@
                                                     <state key="normal" title="No">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="toggleBeenHereButtonWithSender:" destination="dc9-XB-PRA" eventType="touchUpInside" id="4RJ-IN-Fw7"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -528,10 +535,21 @@
                                 <segue destination="Ls0-pV-AbZ" kind="unwind" unwindAction="unwindToHomeScreenWithSegue:" id="wa4-2p-B0b"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="KSV-zt-1nl">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="saveWithSender:" destination="dc9-XB-PRA" id="hCf-Dk-QVE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="locationTextField" destination="sNN-MH-ZU1" id="Q5s-gL-U8Z"/>
+                        <outlet property="nameTextField" destination="JrW-nG-QqC" id="aYC-1N-mle"/>
+                        <outlet property="noButton" destination="lSG-Cd-L6V" id="wOh-Ly-imf"/>
                         <outlet property="photoImageView" destination="1xG-vt-Jzj" id="Vbr-lJ-k19"/>
+                        <outlet property="typeTextField" destination="bU4-Xh-QiI" id="d61-V7-f5S"/>
+                        <outlet property="yesButton" destination="eWU-ZD-4HK" id="xMQ-UZ-Han"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1yb-AR-RHE" userLabel="First Responder" sceneMemberID="firstResponder"/>
